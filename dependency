@@ -1,0 +1,59 @@
+what is Dependency injection?
+A:Dependency injection is a fundamental aspects of the spring framework, through which the spring container
+  "injects" objects into other objects or "dependencies".
+  => simply put, this allows for loose coupling of components and moves the responsibility of managing components
+     onto the container.
+     
+ for example:                         (numbers)
+    Driving license     | |           name and home no
+    collections                       |           |    |   job(class)  class job
+                             |          |            |                 { 
+                              |          |          |
+                              |     |     |        |                    }
+  passport   |   |       |     |     |  || Vinesh  
+                                         ( Class)  |
+    collections                        |           |
+                                       |               | 
+                                     |                   |              class family{
+Pancard:collection                  |                  family(class)
+                                                                           } 
+Description:
+         where Vinesh has dependent on multiple dependency " name and homeno, job, family, Driving license,passport
+         and pancard".  vinesh class object is dependent all these objects. these called tight coupling.
+         we don't need tight coupling.we need loose coupling.
+
+       1: where name and homeno are numbers they are integers. int name,homeno;
+       2:where job ,family are classes. 
+       3:where Driving license and passort and pancard are collections. means it is stored in ArrayList<integer>impNos.It is also class.
+       
+       Public class vinesh{
+       
+          int name,homeno;
+          job job1;// it is a class. job is class and job1 is object .where vinesh object is dependent on it.
+          family fam;// same as above.
+          ArrayList<integer>impNos;
+          }
+          
+   ****** int name,homeno;// are called Dependancies in form of literals.******       
+   ****** job job1;// are called Dependancies in form of objectives.*******
+   ******ArrayList<integer>impos;// Dependancies in form of collection****       
+   
+   example:
+            public class vinesh{
+            
+             int nameid=888;
+             int homeno=111;
+             job job1= new job();
+             family fam= new family();
+             ArrayList<Integer>impNos= new ArrayList<integer>();
+                                       impNos.add(1233424);
+                                       impNos.add(2342423);
+           }          
+           
+ above example we are hardcoding it by installizing values. we don't want to do that. spring gives so many
+    options.
+    
+  1: we are learning how to installize for "Dependancies in form of literal" not by hard coding. so, that spring gives two methods
+      1: Using SETTER Injection.
+      2:Using CONSTRUCTOR Injection.                
+             
